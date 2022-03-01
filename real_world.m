@@ -10,15 +10,16 @@ close all; clc; clear device;
 
 %% Connect to device
 % device = open serial communication in the proper COM port
+device = serialport("COM4",19200);
 
 %% Parameters
 target      = 0.5;   % Desired height of the ball [m]
 sample_rate = 0.25;  % Amount of time between controll actions [s]
 
 %% Give an initial burst to lift ball and keep in air
-% set_pwm(add_proper_args); % Initial burst to pick up ball
-pause(0.1) % Wait 0.1 seconds
-% set_pwm(add_proper_args); % Set to lesser value to level out somewhere in
+set_pwm(device,0); % Initial burst to pick up ball
+pause(1) % Wait 0.1 seconds
+set_pwm(device,4000); % Set to lesser value to level out somewhere in
 % the pipe
 
 %% Initialize variables
@@ -30,8 +31,8 @@ error_sum   = 0;
 while true
     %% Read current height
     % [add_proper_args] = read_data(add_proper_args);
-    % y = ir2y(add_proper_args); % Convert from IR reading to distance from bottom [m]
-    
+    %y = ir2y(add_proper_args); % Convert from IR reading to distance from bottom [m]
+   
     %% Calculate errors for PID controller
     error_prev = error;             % D
     error      = target - y;        % P
@@ -45,4 +46,3 @@ while true
     % Wait for next sample
     pause(sample_rate)
 end
-
