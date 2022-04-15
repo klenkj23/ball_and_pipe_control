@@ -17,17 +17,11 @@ function [distance,pwm,target,deadpan] = read_data(device)
 %% Ask nicely for data
 % use the serialport() command options to write the correct letter to the
 % system (Hint: the letters are in the spec sheet)
-
-%requests a single string from the PID
 write(device,'S',"Char");
 %% Read data
 % use the serialport() command options to read the response
-
-%Count is the number of characters we would liek to read
 count = 20;
 
-%DATA saves the single string returned from the PID with all of the current
-%data avalible 
 DATA = read(device,count,"string")
 %% Translate
 % translate the response to 4 doubles using str2double() and
@@ -37,16 +31,14 @@ DATA = read(device,count,"string")
 % target     = 
 % deadpan    = 
 
-%saves all of the values to strings 
 distanceSTR = extractBetween(DATA,2,5);
 manual_pwmSTR = extractBetween(DATA,7,10);
 targetSTR = extractBetween(DATA,12,15);
-deadpanSTR = extractBetween(DATA,17,20);
+deappanSTR = extractBetween(DATA,17,20);
 
-%turns all of the strings into doubles givving us the values we want
 distance = str2double(distanceSTR)
 manual_pwm = str2double(manual_pwmSTR)
 target = str2double(targetSTR)
-deadpean = str2double(deadpanSTR)
+deappe
 
 end
