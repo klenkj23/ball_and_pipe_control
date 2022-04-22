@@ -4,19 +4,19 @@ This is the Ball and Pipe Project for group <names>
 
 # Table of Contents
    1. [ Overview ](#Overview)
-   2. [ What is this project? ](#proj)
-   3. [ The Ball and Pipe ](#BnP)
-   4. [ Why use reinforcement Learning? ](#RL)
-   5. [ Our Approach ](#approach)
+   2. [ What is this project? ](##proj)
+   3. [ The Ball and Pipe ](##BnP)
+   4. [ Why use reinforcement Learning? ](##RL)
+   5. [ Our Approach ](##approach)
    6. [ Q-Learning ](#QLearning)
-   7. [ Description ](#Description)
-   8. [ How will it work? ](#how)
-   9. [ Applying Q-Learning to Ball and Pipe ](#applying)
+   7. [ Description ](##Description)
+   8. [ How will it work? ](##how)
+   9. [ Applying Q-Learning to Ball and Pipe ](##applying)
    10. [ How to use our code ](#code)
-   11. [ General Use ](#general)
-   12. [ Function 1 ](#f1)
-   13. [ Function 2 ](#f2)
-   14. [ Function n ](#fn)
+   11. [ General Use ](##general)
+   12. [ Function 1 ](##f1)
+   13. [ Function 2 ](##f2)
+   14. [ Function n ](##fn)
 
    
 <a name="Overview"></a>
@@ -62,7 +62,7 @@ explain why we chose q-learning, first simulating then IRL tests
    describe in detail how we will use q-learning for the ball and pipe
 
 <a name="code"></a>
-## How to use our code
+# How to use our code
    
 <a name="general"></a>
 ### General Use
