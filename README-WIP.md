@@ -1,30 +1,25 @@
 # Ball and Pipe Controller
 
-Simple overview of use/purpose.
+This is the Ball and Pipe Project for group <names>
 
-## Description
+## Overview
+   
+### What is this project?
 
-An in-depth paragraph about your project and overview of use.
+explain the goal of this project
 
-## Getting Started
+### The Ball and Pipe
 
-### Dependencies
+explain the physical ball and pipe, how we talk to it
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+### Why use reinforcement learning?
 
-### Installing
+expain what reinforcement learning is and why it works for this project
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+### Our Approach
 
-### Executing program
+explain why we chose q-learning, first simulating then IRL tests
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
 
 ## Help
 
