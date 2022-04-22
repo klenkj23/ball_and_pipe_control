@@ -20,7 +20,7 @@ This is the Ball and Pipe Project for group <names>
 
    
 <a name="Overview"></a>
-## Overview
+# Overview
 
 <a name="proj"></a>
 ### What is this project?
@@ -44,7 +44,7 @@ explain why we chose q-learning, first simulating then IRL tests
 
    
 <a name="QLearning"></a>
-## Q-Learning
+# Q-Learning
 
 <a name="Description"></a>
 ### Description
