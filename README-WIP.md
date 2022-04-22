@@ -3,7 +3,7 @@
 This is the Ball and Pipe Project for group <names>
 
 # Table of Contents
-1. [ Overview ](#What is this project?)
+1. [ Overview. ](#Overview)
 2. [ Usage tips. ](#usage)
 
    
