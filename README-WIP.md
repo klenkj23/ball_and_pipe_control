@@ -4,7 +4,7 @@ This is the Ball and Pipe Project for group <names>
 
 # Table of Contents
    1. [ Overview ](#Overview)
-   2. [ What is this project? ](##proj)
+       2. [ What is this project? ](##proj)
    3. [ The Ball and Pipe ](##BnP)
    4. [ Why use reinforcement Learning? ](##RL)
    5. [ Our Approach ](##approach)
