@@ -20,14 +20,44 @@ expain what reinforcement learning is and why it works for this project
 
 explain why we chose q-learning, first simulating then IRL tests
 
+   
 
-## Help
+## Q-Learning
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+### Description
 
+   describe the basic theory behind q-learning
+   
+### How will it work?
+   
+   explain how q learning will work in a practical sense
+   
+### Applying Q-Learning to Ball and Pipe
+   
+   describe in detail how we will use q-learning for the ball and pipe
+    
+## How to use our code
+   
+### General Use
+   
+   give overview to how the code works as a whole
+   
+### Function 1
+   
+   explain how function 1 works
+   
+### Function 2
+   
+   explain how function 2 works
+   
+### Function n
+   
+   explain how function n works
+   
+   
+   
+   
+   
 ## Authors
 
 Contributors names and contact info
