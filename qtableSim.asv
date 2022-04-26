@@ -13,36 +13,39 @@ qTable = initQ();
 
 %% Start from state 0 
 
-s = 1; %s is the current state
+s = 0; %s is the current state
+
+t = [0,sample_rate]; % time thing 
 
 x = [0 0]; % inital state, must be same length as actions 
-
-pwm = 0; % inital PWM value
 
 
 
 %% episode section, update the qTable
 epStart = 1;
-epEnd = 92;
+epEnd = 100;
 
 alpha = 0.5; % learning rate
 
-gamma = 0.5; % discount factor
+gamma = 0.5; % discount factor 
 
-for ep = epStart:epEnd
+reward = 0: % some reward value that we need 
+
+position = 0; % starting position 
+
+goal = 1; % goal position
+
+for ep = epStart:epEnd 
     
-    position = ep; % get the position from the episode value
-    goal = 5; %get a random goal value
-    
-    for t = 1:sample_rate:1000
+    for timeLim = 1:100 
     % Update q value
     [action,index] = getAction(s,qTable);  % get action for the given state
     
-    u = [action action]; %saves u value from the actions gotten
+    u = [action,action]; %saves u value from the actions gotten
     
-    [sPrime,xNew] = nextState(pwm,u,t,x); %returns s' so that the next state has been found
+    sPrime = nextState(pwm,u,t,x); %returns s' so that the next state has been found
     
-    reward = getReward(position,goal,action); %gets the reward value for the update equation 
+    reward = getReward(position,goal,action) %gets the reward value for the update equation 
     
     qTable(s,index) = qTable(s,index) + alpha * reward + gamma * getAction(sPrime,qTable) - qTable(s,index);
     
@@ -50,12 +53,11 @@ for ep = epStart:epEnd
     
     s = sPrime; 
     
-    x = xNew;
-    
-    position = getPosition(s); % finds the position from the state
+    position = getPosition(s) % 
     
     
     end
+    
 end
 
 

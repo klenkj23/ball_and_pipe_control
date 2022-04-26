@@ -1,0 +1,9 @@
+%%Initalize Q Randomly
+function [qTable] = initQ() 
+pSize = 0:0.001:0.9144; % Bin that holds all values possible for p
+vSize = 0:10:4950; % Bin that holds all possible velocities 
+
+
+
+qTable = rand([maxSize,3]); % generates all values for the qTable
+end 
