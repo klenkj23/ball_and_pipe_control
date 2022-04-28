@@ -40,7 +40,7 @@ In a general sense, reinforement learning is traning a program or system (the ag
 <a name="approach"></a>
 ### Our Approach
 
-explain why we chose q-learning, first simulating then IRL tests
+For our attempt at the ball and pipe, we chose a type of reinforcement learning called Q-learning. This is a model free algorithm that takes information about the current state of the system and determines the best action to get to the next best state. This involes populating a Q-table with Q-values which gives information about the current and next state, actions, and rewards. Q-tables can get fairly large based on the complexity of the system so we will first use a simulation to populate the Q-table with approximate values. Once we have a preliminary Q-table, we will use the SCFBA to refine the table with "real-world" testing. 
 
    
 <a name="QLearning"></a>
