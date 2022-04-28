@@ -64,8 +64,45 @@ The first step to apply this to the ball and pipe system is communicating with t
    
 <a name="quickStart"></a>
 ### Function Quick Start Guide
-   
-   give overview to how the code works as a whole
+   real_world.m
+	This function holds the loop that controls the real-world ball and pipe system and is what calls all the other functions while the system is running. This is the main function for real world use of the ball and pipe system. The Q-table being used must also be initialized in this function. 
+
+read_data.m
+	This function will return all of the data output from the controller during operation. The main information our code is concerned with is the current height of the ball. This function allows us to get the height of the ball from the time of flight sensor. This function is sent the device variable which holds the baud rate and COM port used and returns the distance and other values form the controller.
+
+set_pwm.m
+	This function when called will set the pwm of the fan to the pwm input of the function call. This is the main action function that lets us control the flight of the ball in the ball and pipe system. This function is sent the device variable and the pwm value and then sets the PWM for the controller.
+
+ir2y.m 
+	This function is used to convert the IR reading from the time of flight sensor into the actual distance in meters that the ball is above the bottom of the pipe. This function is sent the IR reading and returns the distance of the ball from the bottom of the pipe in meters and also the percentage of the pipe that is below the ball. 
+	
+actionFromState.m
+	Based on the given position of the ball and the current PWM value of the fan, this function will return what the next action is from the supplied Q-table. This function is the real-world agent of the system. 
+
+qtableSim.m 
+	This function is in essence the simulation equivalent of the real_world.m function. This function is what creates the Q table from the initial random values. Changing one line allows the user to also simulate with an already existing Q table to get an even better Q table so long as it is an iteration from this code. 
+
+getAction.m
+	This function is sent the current state and Q table and returns the action that should be take as well as the column the action is from. This function is used to get the action for the simulation and the real-world systems.
+
+stateFromPosition.m
+	This function is sent the current position and pwm value and returns that corresponding state. This function is used to get the state for the simulation and the real-world systems.
+
+getNextQ.m
+	This function is given the Q-table and the next state and returns the highest Q value from that next state. This function is important for the calculation of the Bellman’s Equation.
+
+getPosition.m
+	This function is sent the current state and returns the position of the ball associated with that state. 
+
+getReward.m 
+	This function is sent the current position, the goal position and the current PWM value and returns the reward associated with those values. If the system is in the right spot it will reward it but if it is in the wrong state it will get a small penalty. 
+
+initQ.m
+	This function is not sent any variables when called and it returns an randomly initalized Q-table. This function is only necessary for the first time the code is used. After completing one simulation the resulting Q-table should be used. 
+
+nextState.m
+	This function is sent the pwm, a 2x1 matrix of actions and a 2x1 martix of the state space and returns the next state and the next state space x value. This function is vital to the simulation because it allows us to predict the outcome of a certain PWM input value. Without the ability to get the next state this entire program would not function. 
+
  
 <a name="f1"></a>
 ### Function 1
