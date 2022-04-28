@@ -35,7 +35,7 @@ The SCFBA consists of a clear tube that contains a ping pong ball. At the botton
 <a name="RL"></a>
 ### Why use reinforcement learning?
 
-expain what reinforcement learning is and why it works for this project
+In a general sense, reinforement learning is traning a program or system (the agent) to make decisions based on a reward. By rewarding the desired actions, the agent can determine the best actions to complete a certain task. Reinforcement learning is very useful in systems that are very difficult to model. In terms of the ball and pipe system, a reward can be assigned to properties such as the height or velocity of the ball. The agent can then try different actions, such as changing the PWM value, to achieve the highest reward possible. As the agent keeps trying different actions, it can remember or store previous actions to keep improving. Reinforcement learning can be implemented through many different algorithms. 
 
 <a name="approach"></a>
 ### Our Approach
