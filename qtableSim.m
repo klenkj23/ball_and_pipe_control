@@ -1,4 +1,4 @@
-%Start fresh
+   %Start fresh
 close all; clc; clear device;
 %% Parameters
 target      = 0.5;   % Desired height of the ball [m]
@@ -13,47 +13,49 @@ qTable = initQ();
 
 %% Start from state 0 
 
-s = 1; %s is the current state
+s = 20; %s is the current state
 
 x = [0 0]; % inital state, must be same length as actions 
 
-pwm = 0; % inital PWM value
+pwm = 2670; % inital PWM value
 
 
 
 %% episode section, update the qTable
 epStart = 1;
-epEnd = 92;
+epEnd = 260;
 
 alpha = 0.5; % learning rate
 
 gamma = 0.5; % discount factor
 
+goalPWM = 2670; % the goal PWM is to stay still 
+
+goalPosition = 50; % the goal position given as the position of the ball * 100
+
 for ep = epStart:epEnd
-    
-    position = ep; % get the position from the episode value
-    goal = 5; %get a random goal value
+    ep
+    s = ep;
+    position = getPosition(s) % finds the position from the state
     
     for t = 1:sample_rate:1000
     % Update q value
     [action,index] = getAction(s,qTable);  % get action for the given state
     
-    u = [action action]; %saves u value from the actions gotten
+    u = [action,action]; %saves u value from the actions gotten
     
-    [sPrime,xNew] = nextState(pwm,u,t,x); %returns s' so that the next state has been found
+    [sPrime,xNew] = nextState(action,u,x); %returns s' so that the next state has been found
     
-    reward = getReward(position,goal,action); %gets the reward value for the update equation 
+    reward = getReward(position,goalPosition,action); %gets the reward value for the update equation 
     
-    qTable(s,index) = qTable(s,index) + alpha * reward + gamma * getAction(sPrime,qTable) - qTable(s,index);
-    
+    qUp = qTable(s,index) + alpha * reward + gamma * getNextQ(qTable,sPrime) - qTable(s,index); % need next q value not next action 
+    qTable(s,index) = qUp;
     % get values for next update
     
-    s = sPrime; 
+    s = sPrime;
     
     x = xNew;
-    
     position = getPosition(s); % finds the position from the state
-    
     
     end
 end

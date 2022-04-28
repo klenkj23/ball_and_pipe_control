@@ -1,7 +1,7 @@
 %%Initalize Q Randomly
 function [qTable] = initQ() 
-pSize = 92; % Bin that holds all values possible for p
-vSize = 410; % Bin that holds all possible velocities 
+pSize = 93; % Bin that holds all values possible for p
+vSize = 3; % Bin that holds all possible velocities 
 
 totalSize = pSize * vSize;
 

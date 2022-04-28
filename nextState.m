@@ -1,5 +1,5 @@
 %% Get state space representation of the transfer function 
-function [sPrime,x] =  nextState(pwm,u,t,x)
+function [sPrime,x] =  nextState(pwm,u,x)
 %% Variables for the transfer function, all real world values 
 syms s; %simulation variable for transfer function 
 g = 9.8; %gravity 
@@ -15,7 +15,7 @@ c = ( (2*g)/Veq ) * ( (mBall - pair*vBall) / mBall );
 
 g2 = 6.3787 * (10^-4);
 
-G = tf([g2*c],[1 c 0]);
+ G = tf([g2*c],[1 c 0]); % open loop transfer function 
 
 
 %% Get the state space from the  transfer function
@@ -27,16 +27,16 @@ stateSpace = ss(G);
 
 timeStep = 0.25;
 
-tSim = [t t+timeStep];
+tSim = [0 timeStep];
 
-[Y,~,X] = lsim(stateSpace,tSim,u,x);
+[Y,~,X] = lsim(stateSpace,u,tSim,x);
+
+%% add calculations for y to state value
+sPrime = stateFromPosition(Y(2),pwm); % next state is returned by using the current PWM and the position at the time step returned by the lsim funciton
 
 
+x = X(2,:); % returns the next actions 
 
-
-sPrime = pwm * Y(t+timeStep,:); % next state is returned by using the current PWM and the position at the time step returned by the lsim funciton
-
-x = X(t+timeStep,:);
 
 
 

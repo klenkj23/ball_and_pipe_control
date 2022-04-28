@@ -17,32 +17,27 @@ target      = 0.5;   % Desired height of the ball [m]
 sample_rate = 0.25;  % Amount of time between controll actions [s]
 
 %% Give an initial burst to lift ball and keep in air
-set_pwm(device,0); % Initial burst to pick up ball
-pause(1) % Wait 0.1 seconds
-set_pwm(device,4000); % Set to lesser value to level out somewhere in
-% the pipe
+set_pwm(device,2670); % this is the stay in place value for the ball and pipe
 
 %% Initialize variables
-% action      = ; % Same value of last set_pwm   
-error       = 0;
-error_sum   = 0;
+ action  = 2670; % Same value of last set_pwm   
+
+qTable = QTable; % get values from the excel sheet 
+
+y = 0;
 
 %% Feedback loop
 while true
     %% Read current height
     % [add_proper_args] = read_data(add_proper_args);
     %y = ir2y(add_proper_args); % Convert from IR reading to distance from bottom [m]
-   
-    %% Calculate errors for PID controller
-    error_prev = error;             % D
-    error      = target - y;        % P
-    error_sum  = error + error_sum; % I
-    
+     [distance,manual_pwm,target,deadpan] = read_data(device);
+     y = ir2y(distance)
     %% Control
-    prev_action = action;
-    %action = % Come up with a scheme no answer is right but do something
-    % set_pwm(add_proper_args); % Implement action
-        
+    [action] = actionFromState(qTable,action,y);
+    action
+    set_pwm(device,action)
+
     % Wait for next sample
     pause(sample_rate)
 end
