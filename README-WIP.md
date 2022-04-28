@@ -13,7 +13,7 @@ This is the Ball and Pipe Project for group <names>
    8. [ How will it work? ](#how)
    9. [ Applying Q-Learning to Ball and Pipe ](#applying)
    10. [ How to use our code ](#code)
-   11. [ General Use ](#general)
+   11. [ Function Quick Start Guide ](#quickStart)
    12. [ Function 1 ](#f1)
    13. [ Function 2 ](#f2)
    14. [ Function n ](#fn)
@@ -62,8 +62,8 @@ The first step to apply this to the ball and pipe system is communicating with t
 <a name="code"></a>
 # How to use our code
    
-<a name="general"></a>
-### General Use
+<a name="quickStart"></a>
+### Function Quick Start Guide
    
    give overview to how the code works as a whole
  
