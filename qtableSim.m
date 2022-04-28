@@ -33,8 +33,8 @@ goalPWM = 2670; % the goal PWM is to stay still
 
 goalPosition = 50; % the goal position given as the position of the ball * 100
 
-for ep = epStart:epEnd
-    ep
+for ep = epStart:epEnd % each episode marks a diffrent starting position for the system
+    ep % outputs the episode so that you can tell how far you are in the simulation
     s = ep;
     position = getPosition(s) % finds the position from the state
     

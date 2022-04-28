@@ -1,4 +1,5 @@
-%%Initalize Q Randomly
+%%Initalize Q Randomly, this function will be replaced with an existing
+%%qTable once it is finished
 function [qTable] = initQ() 
 pSize = 93; % Bin that holds all values possible for p
 vSize = 3; % Bin that holds all possible velocities 

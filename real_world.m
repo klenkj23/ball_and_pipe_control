@@ -3,7 +3,7 @@
 % The current control system is a PID controller.
 %
 % Created by Kyle Naddeo, Mon Jan 3 11:19:49 EST 
-% Modified by YOUR NAME AND DATE
+% Modified by Jonathan Klenk 4/28/2022
 
 %% Start fresh
 close all; clc; clear device;
@@ -32,12 +32,12 @@ while true
     % [add_proper_args] = read_data(add_proper_args);
     %y = ir2y(add_proper_args); % Convert from IR reading to distance from bottom [m]
      [distance,manual_pwm,target,deadpan] = read_data(device);
-     y = ir2y(distance)
+     y = ir2y(distance) % outputs the current position of the ball 
     %% Control
-    [action] = actionFromState(qTable,action,y);
-    action
-    set_pwm(device,action)
+    [action] = actionFromState(qTable,action,y); % get the action from the given state 
+    action % this was left in so that the action can be seen as well as the current position 
+    set_pwm(device,action); % set the PWM from the action function
 
     % Wait for next sample
-    pause(sample_rate)
+    pause(sample_rate);
 end
