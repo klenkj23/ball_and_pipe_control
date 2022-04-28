@@ -14,9 +14,8 @@ This is the Ball and Pipe Project for group <names>
    9. [ Applying Q-Learning to Ball and Pipe ](#applying)
    10. [ How to use our code ](#code)
    11. [ Function Quick Start Guide ](#quickStart)
-   12. [ Function 1 ](#f1)
-   13. [ Function 2 ](#f2)
-   14. [ Function n ](#fn)
+   12. [Set Up Guide](#f1)
+   13. [Important Variables](#f2)
 
    
 <a name="Overview"></a>
@@ -105,19 +104,15 @@ nextState.m
 
  
 <a name="f1"></a>
-### Function 1
+### Set Up Guide
    
    explain how function 1 works
   
 <a name="f2"></a>
-### Function 2
+### Important Variables
    
    explain how function 2 works
   
-<a name="fn"></a>
-### Function n
-   
-   explain how function n works
    
    
    
@@ -126,6 +121,5 @@ nextState.m
 ## Authors
 
 Contributors names and contact info
+Jonathan Klenk : klenkj23@students.rowan.edu 
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
