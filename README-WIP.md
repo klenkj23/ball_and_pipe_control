@@ -24,13 +24,13 @@ This is the Ball and Pipe Project for group <names>
 
 <a name="proj"></a>
 ### What is this project?
-
-explain the goal of this project
+   
+The Ball and Pipe system is the final project of the Systems and Control I, spring 2022 course. This project consists of using the Systems & Control Floating Ball Apparatus (SCFBA) and an assigned controller to control the height of a ping pong ball in the tube. Reinforcement learning will be used to train the controller to keep the ball at the desired height.  
 
 <a name="BnP"></a>
 ### The Ball and Pipe
 
-explain the physical ball and pipe, how we talk to it
+The SCFBA consists of a clear tube that contains a ping pong ball. At the botton of the tube is a DC fan that pushes air into the tube which in turn raises the ball in the tube. At the top of the tube, an optical sensor can determine the position of the ball in the tube and also helps to contain the ball in the pipe. An attached microcontroller is used to read from the sensor and control the DC fan. The microcontroller sends a PWM signal to the fan to adjust the RPM which directly controls the height of the ball. The PWM signal can be manually controlled on the SCFBA or by connecting a computer. The connected computer can directly set the PWM or use a program to set the PWM. 
 
 <a name="RL"></a>
 ### Why use reinforcement learning?
