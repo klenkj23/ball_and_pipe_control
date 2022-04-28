@@ -119,7 +119,7 @@ nextState.m
    
    
 ## Authors
-
-Contributors names and contact info																	
 Jonathan Klenk : klenkj23@students.rowan.edu 
+Nicholas Curcio : curcio64@students.rowan.edu
+Nicholas Mahon : mahonn76@students.rowan.edu
 
