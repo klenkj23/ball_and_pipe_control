@@ -114,8 +114,28 @@ If you are interested in using the supplied Q-table to control the real-world ba
   
 <a name="f2"></a>
 ### Important Variables
-   
-   explain how function 2 works
+r : located in getReward.m, this variable controls the reward given for getting to the final state and the small penalty for not getting to the right. This can be changed to effect how the system is rewarded based on its’ actions.
+
+rise, fall, stay : located in getAction.m and stateFromPosition.m. These variables hold the PWM values for the three different actions the system can take from any given Y position. These can be changed to suit the needs of the user. Currently the values cause the ball to stay put and rise or fall slowly. 
+
+device : located in real_world.m, this variable holds the COM port that the ball and pipe controller is hooked up to as well as the baud rate for the controller. 
+
+sample_rate : located in real_world.m, this variable holds the value at which the system samples the position of the ball. This can be changed so that the system makes decision faster or slower. 
+
+action : located in real_world.m, this variable holds the value for the initial action of the system. It is currently set to have the system set itself to the PWM making the ball stay still.  
+
+qTable :  located in real_world.m, this variable holds the completed Q-table for the agent to look at. This is also where the system saves the values imported from the excel sheet. If you would like to use a different excel sheet, the assignment should happen here. 
+
+sample_rate : located in qtableSim.m, this variable holds the time step interval that the lsim function simulates to. 
+
+alpha : located in qtableSim.m, this variable holds the learning rate of the system. This controls how quickly the system is ready to accept new Q-values in the Q-table. Closer to 1 is faster and closer to 0 is slower. 
+
+gamma : located in qtableSim.m, this variable holds the discount fact which controls how heavily the system weights the future Q-values. Closer to 1 means they are considered more heavily and closer to 0 means they are not considered as much. 
+
+goalPWM : located in qtableSim.m, this variable holds the goal PWM value and is also equal to the PWM found to cause the ball to stay still. 
+
+goalPosition : located in qtableSim.m, this variable holds the goal position for the system to try and get to and stablize at. If this variable is changes a new Q-table must be made for that goal position. This is because the entire previous Q-table is only designed to get to the goal position stated during its’ creation. 
+
   
    
    
