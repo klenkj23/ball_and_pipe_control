@@ -105,8 +105,12 @@ nextState.m
  
 <a name="f1"></a>
 ### Set Up Guide
-   
-   explain how function 1 works
+   To begin install all of the files in the repository. From here there are two main paths.
+
+ If you are interested in running the code to generate an entire Q-table from scratch using the simulation designed please open the following files: qtableSim.m , initQ.m , nextState.m , stateFromPosition.m , getAction.m , getNextQ.m , getPosition.m and , getReward.m. Then run the qtableSim.m function. In total, this took the computer originally used around an hour to completely finish. This may vary depending on the capabilities of the computer hardware being used. After the program is finished running, you will be left with a variable called ‘qTable’ which has the entire simulated results of the Q-table. Clicking on this variable will open matrix that can be copied and pasted into google sheets or excel.
+
+If you are interested in using the supplied Q-table to control the real-world ball and pipe system please open the following files: real_world.m , read_data.m , set_pwm.m , ir2y.m , actionFromState.m , stateFromPosition.m and , getAction.m. In addition to these MATLAB files you will need to import the Q-table excel file that is also supplied in the repository. This file is named QTable.xlsx. The named excel file will hold the Q-table that is acquired from the initial simulation. More excel sheets may be added in the future that have different iterations of Q-tables and they should all function by following the same process. To import the excel file into MATLAB go to the HOME tab and select the import data button. This will open the file explorer, find and select the excel file in the file explorer. The excel sheet consists of 4 colums, the first column holds the state and the next three columns hold the Q-values associated with taking an action in that column from the given state. Highlight every value in columns 2-4, this is selecting every Q-value. Up in the top banner use the dropdown menu under output type to select the output type numeric matrix. Finally, select the Import Selection Button. This will import the table as a 279x3 matrix name QTable. Once this is done and the COM port is specified correctly, run the real_world.m function to start the ball and pipe system. To see how to specify the COM port see the important variables section in teh READ.ME.
+
   
 <a name="f2"></a>
 ### Important Variables
