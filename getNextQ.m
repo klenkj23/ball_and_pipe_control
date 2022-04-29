@@ -1,7 +1,14 @@
-%% get next q action that has the greatest reward  
-
 function [qNext] = getNextQ(qTable,sPrime)
-
+%%  Gets the maximum next Q Value
+% Inputs:
+%  ~ qTable : holds the current values of the qTable being used
+%  ~ sPrime : next predicted state of the system
+% Outputs:
+%  ~ a : action that should be taken returned as a PWM value, offset
+%  subracted from action value
+%~ actIndex : coulumn location of action 
+% Created by: Jonathan Klenk , Nicholas Curcio and, Nicholas Mahon 4/28/2022
+%% get next q action that has the greatest reward  
 [~,index] = getAction(sPrime,qTable); % this function will find the index of the greatest future action from the state s prime
 
 position = getPosition(sPrime); % this function will return the position we will be in at the next state 

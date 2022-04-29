@@ -1,6 +1,14 @@
+function [r] = getReward(currentPosition,finalPosition,currentPwm)
+%%  Gets the position from the state 
+% Inputs:
+%  ~ currentPosition : current position of the system
+%  ~ finalPosition : desired final state of the system
+%  ~ currentPwm : current pwm of the system
+% Outputs:
+%  ~ r : reward given to the system
+% Created by: Jonathan Klenk , Nicholas Curcio and, Nicholas Mahon 4/28/2022
 %% Get Reward Function 
 
-function [r] = getReward(currentPosition,finalPosition,currentPwm)
 
 goalPWM = 2670-2727.0447; % the goal PWM is the PWM at which the ball stays still minus the offset
 

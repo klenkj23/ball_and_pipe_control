@@ -1,5 +1,14 @@
 %% Get state space representation of the transfer function 
 function [sPrime,x] =  nextState(pwm,u,x)
+%%  Initalizes the random Q-table
+% Inputs:
+%  ~ pwm : current pwm value 
+%  ~ u : 2x1 matrix of the action taken at each time step
+%  ~ x : 2x1 matrix of the current state space state  
+% Outputs:
+%  ~ sPrime : the next predicted state 
+%  ~ x : the next state space state to be fed back into this function  
+% Created by: Jonathan Klenk , Nicholas Curcio and, Nicholas Mahon 4/28/2022
 %% Variables for the transfer function, all real world values 
 syms s; %simulation variable for transfer function 
 g = 9.8; %gravity 

@@ -1,6 +1,12 @@
-%% Gets the state from the position and pwm values
-
 function[s]= stateFromPosition(y,pwm)
+%%  Initalizes the random Q-table
+% Inputs:
+%  ~ y : current position of the ball 
+%  ~ pwm : current pwm value 
+% Outputs:
+%  ~ s : current state based on the given position and pwm
+% Created by: Jonathan Klenk , Nicholas Curcio and, Nicholas Mahon 4/28/2022
+%% Gets the state from the position and pwm values
 
 if y < 0 % y cannot be less than 0
     y = 0;

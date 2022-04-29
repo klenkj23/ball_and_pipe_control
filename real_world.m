@@ -1,6 +1,6 @@
 % A MATLAB script to control Rowans Systems & Control Floating Ball 
 % Apparatus designed by Mario Leone, Karl Dyer and Michelle Frolio. 
-% The current control system is a PID controller.
+% The current control method is Q-Learning.
 %
 % Created by Kyle Naddeo, Mon Jan 3 11:19:49 EST 
 % Modified by Jonathan Klenk 4/28/2022

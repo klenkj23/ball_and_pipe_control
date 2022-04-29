@@ -1,4 +1,11 @@
-   %Start fresh
+% A MATLAB script to Simulate the Rowans Systems & Control Floating Ball
+% aparatis
+
+% The current control method is Q-Learning.
+%
+% Created by Jonathan Klenk 4/28/2022 
+
+%Start fresh
 close all; clc; clear device;
 %% Parameters
 target      = 0.5;   % Desired height of the ball [m]
@@ -12,9 +19,6 @@ qTable = initQ();
 
 
 %% Start from state 0 
-
-s = 20; %s is the current state
-
 x = [0 0]; % inital state, must be same length as actions 
 
 pwm = 2670; % inital PWM value

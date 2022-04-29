@@ -1,7 +1,17 @@
-%% Get action function 
-%takes in the state value and then returns the action needed to be taken
 function [a,actIndex] = getAction(s,qTable)
+%%  Given a state and the qTable the function will return the action that 
+%%should be taken as well as the column that action is in
 
+% Inputs:
+%  ~ s : current state of the system
+%  ~ qTable : holds the current values of the qTable being used
+% Outputs:
+%  ~ a : action that should be taken returned as a PWM value, offset
+%  subracted from action value
+%~ actIndex : coulumn location of action 
+% Created by: Jonathan Klenk 4/28/2022
+
+%% Get action function 
 
 %Initalizeing the diffrent action values
 rise = 3000; % PWM value to get the ball to rise slowly 3200
